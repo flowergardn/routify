@@ -13,10 +13,11 @@ const parseFile = require("./extractComments");
 
 const usage = "\nUsage: gen <file name> - Generate documentation from a file.\n";
 
-const options = yargs.usage(usage).help(true)
-    .option("f", {alias:"file", describe: "File to generate docs for", type: "string"})
-    .option("a", {alias:"api", describe: "API that the file is for", type: "string"})
-.argv;
+// noinspection BadExpressionStatementJS
+yargs.usage(usage).help(true)
+    .option("f", {alias: "file", describe: "File to generate docs for", type: "string"})
+    .option("a", {alias: "api", describe: "API that the file is for", type: "string"})
+    .argv;
 
 const argv = yargs(hideBin(process.argv)).argv;
 const {file: fileName, api = "API"} = argv;
@@ -33,13 +34,13 @@ if (!fileName) {
     process.exit(1);
 }
 
-if(!existsSync(fileName)) {
+if (!existsSync(fileName)) {
     sendError(`File ${fileName} does not exist.`);
     process.exit(1);
 }
 
 // Check if the file name includes js or ts
-if(!fileName.match(/.*\.(js|ts)$/)) {
+if (!fileName.match(/.*\.(js|ts)$/)) {
     sendError(`File ${fileName} is not a valid file. Please provide a file with a .js or .ts extension.`);
     process.exit(1);
 }

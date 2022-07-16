@@ -2,7 +2,7 @@ const paramRegex = /@(\w+)\s*: .*/gim;
 
 // Used to remove whitespace from the start of a string
 function ltrim(str) {
-    if(!str) return str;
+    if (!str) return str;
     return str.replace(/^\s+/g, '');
 }
 
@@ -22,7 +22,7 @@ function parseFile(contents) {
     let linesProcessed = 1;
 
     function checkLine(line) {
-        if(linesProcessed === lines.length) {
+        if (linesProcessed === lines.length) {
             routes[currentRoute.path] = currentRoute;
             return;
         }
