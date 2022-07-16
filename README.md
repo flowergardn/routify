@@ -31,3 +31,11 @@ In order to change the name of the file, you can use the `--api` flag.
 ```bash
 routify --file [file with routes] --api [what the routes do]
 ```
+
+## Example
+
+```bash
+routify --file routes.js
+```
+
+(I could have probably made this in a better way (using go), but I was too lazy to do it & wanted to make it work quickly)
