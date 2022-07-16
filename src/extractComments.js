@@ -10,7 +10,6 @@ function ltrim(str) {
 const getValue = (match) => match.split(":")[1].replace(/\s/g, "");
 // Used for when the annotation value is expected to contain a colon (JSON)
 const getValue2 = (match) => {
-  console.log(`getting value for ${match}`);
   const split = match.split(":");
   split.shift();
   return ltrim(split.join(":"));
