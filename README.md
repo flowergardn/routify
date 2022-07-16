@@ -1,6 +1,6 @@
 # Routify
 
-Generate processable JSON data for routes.
+A shitty tool to generate processable JSON data for routes.
 
 ## Installation
 
