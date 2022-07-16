@@ -16,6 +16,7 @@ In order to use Routify, you need to add some comments to your routes. Here's an
 /** Allows a user to create an account
  * @route: /accounts/
  * @method: POST
+ * @body: {username: string, password: string}
  * @returns: { success: true, ...accountData }
  */
 ```
