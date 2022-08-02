@@ -19,8 +19,9 @@ In order to use Routify, you need to add some comments to your routes. Here's a 
  * @method: POST
  * @body: { username: string, password: string }
  * @returns: Application/JSON
- * @400: { success: false, error: string }
- * @400: { success: false, error: "Username already exists" }
+ * @400: { success: false, error: "Bad Username" }
+ * @400: { success: false, error: "Bad Password" }
+ * @409: { success: false, error: "Username already exists" }
  * @200: { success: true, ...accountData }
  */
 
