@@ -40,7 +40,7 @@ In order to use Routify, you need to add some comments to your routes. Here's a 
 
 /** Allows viewing of a specific account
  * @route: /account/:UUID
- * @method: POST
+ * @method: GET
  * @params: { UUID: string }
  * @returns: Application/JSON
  * @404: { success: false, error: "Account not found" }
