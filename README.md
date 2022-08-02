@@ -10,15 +10,43 @@ npm install -g https://github.com/astridlol/routify
 
 ## Usage
 
-In order to use Routify, you need to add some comments to your routes. Here's an example:
+In order to use Routify, you need to add some comments to your routes. Here's a few examples:
 
 ```js
+// Example 1
 /** Allows a user to create an account
  * @route: /accounts/
  * @method: POST
- * @body: {username: string, password: string}
- * @returns: { success: true, ...accountData }
+ * @body: { username: string, password: string }
+ * @returns: Application/JSON
+ * @400: { success: false, error: "Bad Username" }
+ * @400: { success: false, error: "Bad Password" }
+ * @409: { success: false, error: "Username already exists" }
+ * @200: { success: true, ...accountData }
  */
+
+// Example 2
+
+/** Allows a user to log in to an account
+ * @route: /accounts/login
+ * @method: POST
+ * @body: { username: string, password: string }
+ * @returns: Application/JSON
+ * @401: { success: false, error: "Invalid username or password" }
+ * @200: { success: true, token: "token" }
+ */
+
+// Example 3
+
+/** Allows viewing of a specific account
+ * @route: /account/:UUID
+ * @method: POST
+ * @params: { UUID: string }
+ * @returns: Application/JSON
+ * @404: { success: false, error: "Account not found" }
+ * @200: { success: true, ...accountData }
+ */
+
 ```
 
 After that, you can use Routify to generate a JSON file of your routes.
